@@ -1,0 +1,33 @@
+﻿
+@using WEBthanh.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<HinhAnhPhoto>
+
+@{
+    ViewBag.Title = "Hình ảnh và Videos";
+    Layout = "~/Views/Layout/Photos.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div style="float:left">
+        <a href="@Url.Action("XemChiTiet","Photos",new { @MaHA=item.MaHA})"><img style="width:400px; height:350px;margin-left:32px;" src="@Url.Content("~/HinhAnhPhotos/" + item.Anh)" /></a>
+        <div id="ChiTiet" style="text-align:center">
+            <div>@item.DiaDiem</div>
+            <div>@item.NgayCapNhat</div>
+            <div>Maker: @item.Maker</div>
+        </div>
+    </div>
+}
+
+                  <div style="text-align:center;font-size:20px;margin-top:900px;">
+                      Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                  </div>
+<div id="MenuTrang" style="text-align:center">
+    @Html.PagedListPager(Model, page => Url.Action("PhotosPartial", new { page=page}))
+</div>
+<style>
+    #MenuTrang li {
+        display: inline;
+    }
+</style>

@@ -1,0 +1,73 @@
+﻿
+@using WEBthanh.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<WEBthanh.Models.TrichhDoan>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h1>Quản lý cái bài TRÍCH ĐOẠN</h1>
+
+<p style="background-color:red;padding:5px;width:120px;">
+    @Html.ActionLink("Thêm bài viết mới", "ThemMoi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaTD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenTD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Anh)
+           
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TacGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MoTa)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTD)
+            </td>
+            <td>
+                <img src="@Url.Content("~/HinhAnhTrichDoan/" +item.Anh)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayCapNhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TacGia)
+            </td>
+            <td>
+                @Html.Raw(item.MoTa)
+            </td>
+            <td style="width:80px;">
+                @Html.ActionLink("Chỉnh sửa", "ChinhSua", new { @MaTD = item.MaTD })<br /> 
+                @Html.ActionLink("Chi tiết", "ChiTiet", new { @MaTD =item.MaTD }) <br />
+                @Html.ActionLink("Xóa", "Xoa", new { @MaTD = item.MaTD })
+            </td>
+        </tr>
+    }
+
+</table>
+
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+
+@Html.PagedListPager(Model,page=>Url.Action("Index",new { page = page }))

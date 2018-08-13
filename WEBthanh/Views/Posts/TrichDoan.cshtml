@@ -1,0 +1,50 @@
+﻿
+
+
+@using WEBthanh.Models;
+@model List<TrichhDoan>
+<link href="~/assets/css/main.css" rel="stylesheet" />
+@*<link href="~/Content/TrangChu.css" rel="stylesheet" />*@
+<link href="~/Content/Responseeee2.css" rel="stylesheet" />
+
+@{
+    /**/
+
+    ViewBag.Title = "Trích đoạn";
+    Layout = "~/Views/Layout/Posts.cshtml";
+}
+<div style="margin-left:0px;width:200px;border:1px solid red;"><a href="@Url.Action("DangNhap","NguoiDungAD")">Quản lý trích đoạn</a></div>
+<br />
+@*<div style="width:1000px;margin-left:0px;">*@
+    <div id="column1">
+        @*@{ int i = 0;}*@
+        @foreach (var item in Model)
+        {
+            //i++;
+        <div id="ThongTin">
+
+            <header>
+                <div>@item.MaTD</div>
+                <h2>
+                    <a href="#" style="text-align:center;margin-left:15px;">
+                        @item.TenTD
+                    </a>
+                </h2>
+                <span class="date">@item.NgayCapNhat</span>
+            </header>
+            <a href="#" class="image fit"><img src="@Url.Content("~/HinhAnhTrichDoan/" +item.Anh)" style="width:300px;height:200px;margin-left:90px;box-shadow: 4px 4px 4px;" /></a>
+
+            <p style="text-align:center"><b>@item.TacGia</b></p>
+            <ul class="actions special">
+                <li><a href="@Url.Action("XemChiTietTD","ChiTietTrichDoan",new { @MaTD=item.MaTD})" class="button">Read More</a></li>
+            </ul>
+
+        </div>
+    @*if (i % 3 == 0)
+    {
+        <div style="clear:both"></div>
+}*@
+}
+    </div>
+    <div class="clear"></div>
+@*</div>*@

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Cinzel|Modern+Antiqua|Playfair+Display" rel="stylesheet">
+    <link href="~/Content/Responseeeeeee.css" rel="stylesheet" />
+
+    <style>
+        #ToanTrang {
+            position: relative;
+        }
+
+        #thanhmenu {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 1350px;
+            height: 50px;
+            background-color: lightgray;
+            position:fixed;
+            z-index:100;
+        }
+
+            #thanhmenu .txtfind {
+                margin-left: 450px;
+                margin-top: 5px;
+                border-radius: 5px;
+                height: 30px;
+            }
+
+            #thanhmenu li {
+                float: right;
+                list-style-type: none;
+                margin-right: 50px;
+            }
+
+                #thanhmenu li a {
+                    display: inline;
+                    text-decoration: none;
+                    margin-left: 20px;
+                    font-size: 18px;
+                    color: dimgray;
+                }
+    </style>
+</head>
+<body>
+    <div id="ToanTrang">
+        <div id="thanhmenu">
+            @using (Html.BeginForm("KetQuaTimKiem", "TimKiemBaiViet", FormMethod.Post))
+        {
+            @Html.TextBox("txtfindphotos", " ", htmlAttributes: new { @class = "txtfind", @placeholder = "Bạn muốn tìm gì?" })
+    }
+
+            <p style="font-size:25px;font-family: 'Modern Antiqua', cursive;
+margin-left:80px;margin-top:-30px;text-shadow:2px 2px 2px;"><a style="text-decoration:none" href="@Url.Action("PhotosPartial","Photos")"> Photos & Videos</a></p>
+            <ul>
+                <li><a href="#HinhAnh" style="position:absolute;top:12px;right:400px;">Images</a></li>
+                <li><a href="#" style="position:absolute;top:12px;right:300px;">Videos</a></li>
+            </ul>
+        </div>
+        <div style="position:absolute;left:-10px;top:250px;transform:rotate(-90deg);font-size:25px;color:crimson;padding:5px;background-color:black;position:fixed;z-index:1000;opacity:0.8"><a href="@Url.Action("SecondIndex","SecondHome")">Home</a></div>
+
+
+        <div id="backgr" style="background-color:black;opacity:0.7;width:1250px;position:absolute;left:50px;height:550px;top:60px;">
+            <div style="background-color:white;height:580px;width:5px;margin-left:600px;transform:rotate(10deg);position:absolute;top:-5px;"></div>
+        </div>
+        <div id="img1" style="border:1px solid red;width:350px;height:500px;position:absolute;top:85px;left:150px;background-color:black">
+            <a href="#HinhAnh" style="text-decoration:none;">
+                <img src="~/HinhAnhFirstPhotos/24f3ef5f8cd5638b3ac4.jpg" style="width:350px;height:400px;" />
+                <p style="text-align:center;font-family: 'Abril Fatface', cursive;font-size:30px;color:white;">Hình Ảnh</p>
+            </a>
+        </div>
+        <div id="img2" style="border:1px solid red;width:350px;height:500px;position:absolute;top:85px;right:150px;background-color:black">
+            <img src="~/HinhAnhFirstPhotos/schools-promotional-videos.jpg" style="width:350px;height:400px;" />
+            <p style="text-align:center;font-family: 'Abril Fatface', cursive;font-size:30px;color:white">Videos</p>
+        </div>
+
+        <div id="HinhAnh" style="position:absolute;top:620px;">
+            <p style="font-family: 'Cinzel', serif;
+font-size:30px;margin-left:585px;">Hình Ảnh</p>
+            @RenderBody()
+
+        </div>
+
+        <br />
+
+        @*<div id="Videos" style="position:absolute;top:2220px;">
+            <p style="font-family: 'Cinzel', serif;
+font-size:30px;margin-left:20px;">Videos</p>
+            @RenderSection("NoiDung", false)
+        </div>*@
+
+
+
+        @*<div id="Videos" style="position:absolute;top:620px;">
+                    <p style="font-family: 'Cinzel', serif;
+        font-size:30px;margin-left:20px;">Hình Ảnh</p>
+
+                </div>*@
+
+    </div>
+</body> 
+</html>

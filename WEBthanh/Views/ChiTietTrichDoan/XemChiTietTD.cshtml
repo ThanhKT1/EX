@@ -1,0 +1,32 @@
+﻿
+@using WEBthanh.Models;
+@model TrichhDoan
+
+@{
+    ViewBag.Title = "Reading trích đoạn";
+    Layout = "~/Views/Layout/Posts.cshtml";
+}
+<style>
+    #BackgrPosts {
+        display: none;
+    }
+
+    #titlePosts {
+        display: none;
+    }
+
+    .pagination {
+        display: none;
+    }
+
+    #thanhmenu .txtfind {
+        display: none;
+    }
+
+</style>
+<br />
+
+    @Model.NgayCapNhat
+<div style="border:1px solid black;">
+        @Html.Raw(Model.MoTa)
+</div>

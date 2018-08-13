@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html  lang="en" class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Collection of Page Transitions</title>
+    <meta name="description" content="A Collection of Page Transitions with CSS Animations" />
+    <meta name="keywords" content="page transition, css animation, website, effect, css3, jquery" />
+    <meta name="author" content="Codrops" />
+
+    <link href="~/Content/DetailsThongTin/css/animations.css" rel="stylesheet" />
+    <link href="~/Content/DetailsThongTin/css/component.css" rel="stylesheet" />
+    <link href="~/Content/DetailsThongTin/css/default.css" rel="stylesheet" />
+    <link href="~/Content/DetailsThongTin/css/multilevelmenu.css" rel="stylesheet" />
+    <script src="~/Content/DetailsThongTin/js/modernizr.custom.js"></script>
+
+
+    <link href="~/Content/fontawesome-free-5.1.0-web/css/all.css" rel="stylesheet" />
+    <style>
+        .menunhanh {
+            position: absolute;
+            top: 100px;
+            right: 0;
+            z-index: 10;
+        }
+
+            .menunhanh li {
+                list-style-type: none;
+            }
+
+                .menunhanh li a {
+                    display: block;
+                }
+    </style>
+</head>
+
+<body>
+    @RenderBody()
+    <div class="menunhanh">
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100025080900338" target="_blank"  style="width:40px;height:40px"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li> <a href="https://www.instagram.com/BuiThanh99/" target="_blank" style="width:40px;height:40px"><i class="fab fa-instagram"></i></a></li>
+            <li> <a href="https://www.youtube.com/channel/UClBBjR3pQ3LfRgdxoHYQpqQ?view_as=subscriber" target="_blank"  style="width:40px;height:40px"><i class="fab fa-youtube"></i></a></li>
+            <li> <a href="https://twitter.com/BuiThan90017624" target="_blank"  style="width:40px;height:40px"></a><i class="fab fa-twitter"></i></li>
+        </ul>
+    </div>
+
+    <div class="codrops-top clearfix">
+        <a class="codrops-icon codrops-icon-prev" href="@Url.Action("SecondIndex","SecondHome")"><span>Trở về trang chủ</span></a>
+        @*<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=15001"><span>Back to the Codrops Article</span></a></span>*@
+    </div>
+
+    <div class="pt-triggers">
+        <button id="iterateEffects" class="pt-touch-button">Next</button>
+    </div><!-- /triggers -->
+
+    <div id="pt-main" class="pt-perspective">
+        <div class="pt-page pt-page-3"><h1><span>About</span><strong>My</strong> Work</h1>
+        <a href="@Url.Action("MyWork","DetailsThongTin")" style="position: absolute;top: 350px;z-index: 2;padding: 35px;border:1px solid black;cursor: pointer;left: 44.5%;border-radius: 20px;color:black">Details</a>
+        </div>
+        <div class="pt-page pt-page-5"><h1><span>About</span><strong>MY</strong> SELF</h1></div>
+        <div class="pt-page pt-page-6">
+            <h1><span>About</span><strong>Life</strong> Around</h1>
+        </div>
+    </div>
+
+    <div class="pt-message">
+        <p>Your browser does not support CSS animations.</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Content/DetailsThongTin/js/jquery.dlmenu.js"></script>
+    <script src="~/Content/DetailsThongTin/js/pagetransitions.js"></script>
+</body>
+</html>

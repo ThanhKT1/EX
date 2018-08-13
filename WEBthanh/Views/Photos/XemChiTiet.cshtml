@@ -1,0 +1,31 @@
+﻿
+@using WEBthanh.Models;
+@model HinhAnhPhoto
+
+@{
+    ViewBag.Title = "Chi tiết hình ảnh";
+    Layout = "~/Views/Layout/Photos.cshtml";
+}
+<style>
+    #backgr{
+        display:none;
+    }
+    #img1{
+        display:none;
+    }
+    #img2{
+        display:none;
+    }
+    #tieude{
+        text-align:center;
+    }
+</style>
+
+<div style="position:absolute;top:-580px;margin-left:140px;">
+    <img style="width:1050px;height:650px;" src="@Url.Content("~/HinhAnhPhotos/" + Model.Anh)" />
+    <div style="text-align:center">
+        <div>Địa điểm: <b> @Model.DiaDiem</b></div>
+        <div>Ngày: @Model.NgayCapNhat</div>
+        <div><i>@Model.Maker</i></div>
+    </div>
+</div>

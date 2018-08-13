@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Playfair+Display" rel="stylesheet">
+    <link href="~/Content/fontawesome-free-5.1.0-web/css/all.css" rel="stylesheet" />
+    <style>
+        #mainimg {
+            overflow: hidden;
+        }
+
+            #mainimg .img1:hover {
+                transform: scale(1,2);
+                transition: 6s;
+            }
+        #Contact a {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @RenderBody()
+        <div id="mainimg" style="position:absolute;left:0px;top:0px;">
+           
+            @*<video  width="1349" height="670" autoplay loop muted playsinline >
+                <source  src="~/HinhAnhTT/Stock%20m%c3%a2y%20bay%20HD%20%c4%91%e1%ba%b9p.mp4" type="video/mp4" />
+            </video>*@
+            <img src="~/HinhAnhTT/38404736_227736008072428_3047132619083874304_n.jpg" style="margin-left:370px;z-index:2000;height:670px;position:absolute;top:0px;opacity:0.6" />
+            <div  class="img1">
+                <img src="~/HinhAnhTT/pexels-photo-988872.jpeg" style="height:670px;width:1349px;opacity:0.3;" />
+                <strong style="z-index:20002;position:absolute;top:220px;font-size:80px;left:340px;color:crimson;z-index:100;">BUI</strong>
+                <strong style="z-index:20002;position:absolute;top:220px;font-size:80px;right:300px;color:crimson;z-index:100;">QUOC</strong>
+                <strong style="z-index:20002;position:absolute;top:350px;font-size:80px;right:540px;color:aqua;z-index:100;">THANH</strong>
+            </div>
+
+            <div style="position:absolute;top:30px;left:135px;">
+                <strong style="font-size:65px;text-shadow:2px 4px 5px;">24</strong><br /><p style="font-size:22px;position:absolute;left:-14px;top:30px;">November</p><br />
+                <div style="width:400px;position:absolute;left:-130px;top:70px;"><p>Studying at University of Transport and Comnunication <br /><p style="margin-top:-10px;margin-left:100px;">VietNam-HCM City</p></p></div>
+            </div>
+
+            <div style="position:absolute;top:28px;right:10px;width:400px;z-index:2100;">
+                <p style="font-family: 'Alex Brush', cursive;font-size:25px;">As a child, I used to complain to my father not having toys. And, he would say my brain is greatest toy ever created. He lies the secret of all happiness</p>
+            </div>
+
+            <div id="Contact" style="position:absolute;bottom:38px;right:-110px;width:400px;">
+                <a href="https://www.facebook.com/profile.php?id=100025080900338" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/BuiThanh99/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UClBBjR3pQ3LfRgdxoHYQpqQ?view_as=subscriber" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://twitter.com/BuiThan90017624" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <div style="position:absolute;bottom:30px;left:135px;margin-left:-50px;">
+                <p>Information  Technology</p><br />
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

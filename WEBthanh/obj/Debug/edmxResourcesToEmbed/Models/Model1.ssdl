@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEBTHANHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaiViett">
+    <Key>
+      <PropertyRef Name="MaBV" />
+    </Key>
+    <Property Name="MaBV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBV" Type="nvarchar" MaxLength="50" />
+    <Property Name="Anh" Type="text" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="Poster" Type="nchar" MaxLength="20" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HinhAnhPhotos">
+    <Key>
+      <PropertyRef Name="MaHA" />
+    </Key>
+    <Property Name="MaHA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anh" Type="text" />
+    <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="Maker" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNG">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiKhoan" Type="char" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="NgaySinh" Type="date" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNGAD">
+    <Key>
+      <PropertyRef Name="MaAd" />
+    </Key>
+    <Property Name="MaAd" Type="int" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiKhoan" Type="char" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="MaHinhAnh" />
+    </Key>
+    <Property Name="MaHinhAnh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHinhAnh" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayCapNhat" Type="datetime" />
+    <Property Name="NoiCapNhat" Type="nchar" MaxLength="50" />
+    <Property Name="TacGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TrichhDoan">
+    <Key>
+      <PropertyRef Name="MaTD" />
+    </Key>
+    <Property Name="MaTD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTD" Type="nvarchar" MaxLength="200" />
+    <Property Name="Anh" Type="text" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="TacGia" Type="nvarchar" MaxLength="70" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="VideosPhotos">
+    <Key>
+      <PropertyRef Name="MaVideo" />
+    </Key>
+    <Property Name="MaVideo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenVideo" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="WEBTHANHModelStoreContainer">
+    <EntitySet Name="BaiViett" EntityType="Self.BaiViett" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HinhAnhPhotos" EntityType="Self.HinhAnhPhotos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOIDUNGAD" EntityType="Self.NGUOIDUNGAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Photos" EntityType="Self.Photos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrichhDoan" EntityType="Self.TrichhDoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VideosPhotos" EntityType="Self.VideosPhotos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

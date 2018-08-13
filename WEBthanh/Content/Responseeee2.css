@@ -1,0 +1,27 @@
+﻿#backgr1 {
+    width: 100%;
+}
+
+#column1 {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    /*background-color:yellow;*/
+    float: left;
+    width:500px;
+}
+
+.clear {
+    clear: both;
+}
+
+@media screen and (max-width:600px) {
+    #backgr1 {
+        height: 300px;
+    }
+
+    #column1 {
+        float: none;
+        width: 100%;
+    }
+}

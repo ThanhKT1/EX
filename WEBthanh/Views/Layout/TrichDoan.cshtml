@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+    <noscript><link href="~/assets/css/noscript.css" rel="stylesheet" /></noscript>
+    <link href="~/Content/Responseeee2.css" rel="stylesheet" />
+    <style>
+        .titlePost {
+            background-color: black;
+            border: 1px solid black;
+            z-index: 10;
+            position: absolute;
+            top: 270px;
+            left: 33.5%;
+            opacity: 0.2;
+            font-size: 30px;
+            text-align: center;
+        }
+
+            .titlePost:hover {
+                transform: scale(1.2,1.2);
+                opacity: 0.9;
+                border: 1px solid red;
+                color: white;
+                transition: 2s;
+            }
+    </style>
+
+</head>
+<body class="is-preload">
+
+    @RenderBody()
+
+    @*<!-- Wrapper -->
+        <div id="wrapper" class="fade-in">
+
+            <!-- Intro -->
+            <div id="intro">
+                <h1>
+                    This is<br />
+                    Massively
+                </h1>
+                @*<p>
+                    A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
+                    and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>.
+                </p>*@
+    @* <ul class="actions">
+                <li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Massively</a>
+        </header>*@
+
+    <!-- Nav -->
+    <div class="titlePost"><p style="margin-top:47px;text-align:center;padding:50px;border:1px solid black;">"Cùng chia sẻ, cùng thành công"</p></div>
+
+    <div id="backgr1" style="z-index:2;position:absolute;top:800px;">
+            <img src="~/HinhAnhPosts/pexels-photo-1209843.jpeg" />
+       
+        <div class="clear"></div>
+        <img src="~/HinhAnhPosts/pexels-photo-533923.jpeg" style="height:2580px" />
+    </div>
+
+
+         <ul class="links">
+            <li class="active"><a href="index.html">Bài viết</a></li>
+            <li><a href="@Url.Action("TrichDoan","Posts")">Trích đoạn</a></li>
+            <li><a href="elements.html">Góp ý</a></li>
+        </ul>
+    <!-- Main -->
+    <div id="main">
+
+        <section class="posts">
+            <article>
+                <div id="column1">
+                    @Html.Action("TrichDoan", "Posts")
+                </div>
+            </article>
+        </section>
+
+
+
+        @* <!-- Featured Post -->
+        <article class="post featured">
+            <header class="major">
+                <span class="date">April 25, 2018</span>
+                <h2>
+                    <a href="#">
+                        And this is a<br />
+                        my posts
+                    </a>
+                </h2>
+                <p>
+                    Tại đây là những phần trích đoạn từ nhiều nguồn kiến thức khác nhau chắc chắn sẽ mang lại nhiều lợi ích cho bạn<br />Chúc bạn thành công!
+                </p>
+            </header>
+            <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+            <ul class="actions special">
+                <li><a href="#" class="button large">Full Story</a></li>
+            </ul>
+        </article>
+        *@
+        <!-- Posts -->
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+</html>

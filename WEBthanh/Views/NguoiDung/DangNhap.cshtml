@@ -1,0 +1,51 @@
+﻿@model WEBthanh.Models.NGUOIDUNG
+
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Layout/Posts.cshtml";
+}
+<style>
+    #BackgrPosts {
+        display: none;
+    }
+
+    #titlePosts {
+        display: none;
+    }
+
+    .pagination {
+        display: none;
+    }
+
+    #thanhmenu .txtfind {
+        display: none;
+    }
+
+    #txtbox .txtTaiKhoan {
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+    }
+
+    #txtbox .txtMatKhau {
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+    }
+</style>
+<br /><br />
+<strong style="font-family: 'Prosto One', cursive;
+font-size:36px;margin-left:200px;color:deepskyblue">Đăng Nhập</strong>
+<div style="width:450px;border-style:solid;border-width:3px 1px 1px 3px;padding:10px;padding-left:50px;padding-right:50px;border-radius:0px 5px 0px 5px">
+    @using (Html.BeginForm())
+    {
+        <div id="txtbox">
+            <span>Tài khoản</span>
+            @Html.TextBox("txtTaiKhoan","", htmlAttributes: new { @class = "txtTaiKhoan",@placeholder = "Your Account" })
+            <br />
+            <span>Mật khẩu</span>
+            @Html.TextBox("txtMatKhau","", htmlAttributes: new { @class = "txtMatKhau",@placeholder = "Your Password",@type="password" })
+            <br />
+        </div>
+        <input type="submit" value="Sign In" /><br /><br />
+        <a href="@Url.Action("SignOut","NguoiDung")">Nếu bạn chưa có tài khoản? Đăng ký ngay!</a>
+    }
+</div>

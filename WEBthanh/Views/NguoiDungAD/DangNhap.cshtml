@@ -1,0 +1,40 @@
+﻿
+
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Layout/Posts.cshtml";
+}
+
+<style>
+    #BackgrPosts {
+        display: none;
+    }
+
+    #titlePosts {
+        display: none;
+    }
+
+    .pagination {
+        display: none;
+    }
+
+    #thanhmenu .txtfind {
+        display: none;
+    }
+    </style>
+<br /><br />
+      <div style="border:1px solid black;">
+
+          <h2>Đăng Nhập</h2>
+          <div style="color:red">@ViewBag.ThongBao</div>
+          @using (Html.BeginForm())
+    {
+      <span>Tài khoản</span>
+      @Html.TextBox("txtTaiKhoan","", htmlAttributes: new {@class ="txtTaiKhoan",@placeholder ="Your Account" })
+      <span>Mật khẩu</span>
+      @Html.TextBox("txtMatKhau","", htmlAttributes: new {@class ="txtMatKhau",@placeholder = "Passworld", @type = "password" })
+      <Br />
+
+      <input type="submit" value="Đăng nhập" />
+}
+          </div>

@@ -1,0 +1,49 @@
+﻿
+@using WEBthanh.Models;
+@model List<BaiViett>
+
+<link href="~/assets/css/main.css" rel="stylesheet" />
+@*<link href="~/Content/TrangChu.css" rel="stylesheet" />*@
+<link href="~/Content/Responseeeeeee.css" rel="stylesheet" />
+@{
+    /**/
+
+    ViewBag.Title = "Bài Viết";
+    Layout = "~/Views/Layout/Posts.cshtml";
+}
+<div id="column1">
+    @*@{ int i = 0;}*@
+    @foreach (var item in Model)
+    {
+
+        <div id="ThongTin">
+
+            <header>
+
+                <h2>
+                    <a href="#" style="text-align:center;margin-left:15px;">
+                        @item.TenBV
+                    </a>
+                </h2>
+                <span class="date">@item.NgayCapNhat</span>
+            </header>
+            <a href="#" class="image fit"><img src="@Url.Content("~/HinhAnhDetailsTT/HinhAnhPosts/Bài viết/" +item.Anh)" style="width:300px;height:200px;margin-left:90px;box-shadow: 4px 4px 4px;" /></a>
+
+
+            <p style="text-align:center">@item.MoTa</p>
+            <p style="text-align:center"><b>@item.Poster</b></p>
+            <ul class="actions special">
+                <li><a href="#" target="_blank" class="button">Read More</a></li>
+            </ul>
+
+        </div>
+        @*if (i % 3 == 0)
+            {
+                <div style="clear:both"></div>
+            }*@
+    }
+</div>
+<div class="clear"></div>
+
+
+

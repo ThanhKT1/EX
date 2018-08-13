@@ -1,0 +1,32 @@
+﻿
+#BackgrPosts {
+    width: 100%;
+}
+#column1 {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    float: left;
+    width: 500px;
+    border:1px dotted black;
+}
+.clear {
+    clear: both;
+}
+#thanhmenu{
+    width:100%;
+}
+
+@media screen and (max-width:300px) {
+    #BackgrPosts {
+        height: 300px;
+
+    }
+    #column1 {
+        float: none;
+        width: 100%;
+    }
+    #thanhmenu {
+        height: 300px;
+    }
+}

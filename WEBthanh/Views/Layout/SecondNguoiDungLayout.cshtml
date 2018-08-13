@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/NewNguoiDungLayout/css/style.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playball|Playfair+Display|Rouge+Script" rel="stylesheet">
+
+    <style>
+        #tongquat {
+            background-image: url('../../HinhAnh/Backgr/amazing-animal-beautiful-beautifull.jpg');
+            position: absolute;
+            top: 385px;
+            width: 100%;
+            left: 0;
+            height: 380px;
+            background-color: red rgba(0,0,0,0.75);
+            opacity: 0.3;
+            background-attachment: fixed;
+            transition: 0.25s;
+            z-index: -2;
+        }
+
+        .inner {
+            text-align: center;
+            padding: 120px;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    @RenderBody()
+    <!-- Profile Image -->
+    <div id="main-profile-image">
+        <img src="~/HinhAnh/HinhAnhThongTin/38600807_270517987065801_5013379582179409920_n.jpg" style="opacity:0.75;"/>
+    </div>
+
+    <div class="wrapper">
+
+        <!-- Header -->
+        <header>
+            <h1 class="text-center">
+                The blog of <span style="font-family: 'Playball', cursive;color:#DEB887;text-shadow:1px 1px 3px;
+
+">Bui Thanh</span>
+            </h1>
+        </header>
+
+
+        <!-- Main content area -->
+        <main>
+            <article>
+                <p class="text-center">Welcome to my blog, where I share about my knowledge, the books I'm reading, more beautiful photos,so on. I hope that you'll subcribe. <a href="@Url.Action("DangNhap","NguoiDung")" title="ZyPOP">Sign In</a>.<br /><br /> <i>This is my </i><b>Posts</b>   <a href="@Url.Action("PostsPartial","Posts")" title="ZyPOP">Read more</a>.</p>
+
+                <p class="text-center"> <i>All my <b>photos</b> what I took </i><a href="@Url.Action("PhotosPartial","Photos")">See them</a> </p>
+
+
+                <p class="text-center no-spacer"><a href="#" class="button button-large">Contact me</a><br /><i style="color:black;text-align:center;">nguyenhoang30041975@gmail.com</i></p>
+
+            </article>
+
+        </main>
+
+        <div id="tongquat">
+            <div class="inner">
+                <div style="background:linear-gradient(to right,black,red);position: absolute;
+    top: 0px;
+    width: 100%;
+    left: 0;
+    height: 500px;opacity: 0.4"></div>
+                <h2 style="color:white;margin-top:72px;">Cám ơn bạn đã ghé thăm trang</h2>
+
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100023228045492
+"><i class="fa fa-facebook-square fa-3x"></i></a>
+            <a href="#"><i class="fa fa-twitter-square fa-3x"></i></a>
+            <a href="https://www.youtube.com/channel/UClBBjR3pQ3LfRgdxoHYQpqQ?view_as=subscriber"><i class="fa fa-youtube-square fa-3x"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa fa-instagram fa-3x"></i></a>
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <p style="color:darkgray">Thank you for watching ! <a href="@Url.Action("DetailsThongTin","DetailsThongTin")"><span style="color:crimson">About me</span></a>.</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>
